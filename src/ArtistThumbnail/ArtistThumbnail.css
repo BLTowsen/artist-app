@@ -1,0 +1,6 @@
+.artist-thumbnail {
+    display: inline-block;
+    margin: 0 10px 10px 0; /* add a margin of 10 pixels to the right and bottom of each thumbnail */
+    width: 200px; /* set the width of the thumbnail to 150 pixels */
+  }
+  

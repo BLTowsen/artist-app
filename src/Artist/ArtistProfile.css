@@ -1,0 +1,70 @@
+.artist-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .artist-profile .artist-name {
+    margin-bottom: 1rem;
+  }
+  
+  .artist-profile .artist-name h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .artist-profile .artist-bio {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .artist-profile .artist-works {
+    margin-bottom: 1rem;
+  }
+  
+  .artist-profile .artist-works h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .artist-profile .artwork-preview {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .artist-profile .artwork-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 1rem;
+  }
+  
+  .artist-profile .artwork-preview h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .artist-profile .artist-contact {
+    margin-bottom: 1rem;
+  }
+  
+  .artist-profile .artist-contact h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .artist-profile .artist-contact p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  

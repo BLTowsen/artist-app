@@ -1,0 +1,70 @@
+.search-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-page form {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+  
+  .search-page form input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .search-page form button[type="submit"],
+  .search-page form button[type="button"] {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .search-page form button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  .search-page .artist-list {
+    width: 50%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+  
+  .search-page .artist-list h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-page .artist-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .search-page .artist-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .search-page .artist-list li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .search-page .artist-list li:active {
+    background-color: #e0e0e0;
+  }
+  
