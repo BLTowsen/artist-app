@@ -1,38 +1,47 @@
 .home-page {
-    background-color: #eaf7ff; /* light blue background color */
-  }
-  
-  .artist-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .artist-thumbnail {
-    display: inline-block;
-    margin: 0 10px 10px 0; /* add a margin of 10 pixels to the right and bottom of each thumbnail */
-    width: 150px; /* set the width of the thumbnail to 150 pixels */
-    background-color: #fff; /* white background color for the thumbnail */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* add a subtle shadow effect */
-    border-radius: 5px; /* round the corners of the thumbnail */
-  }
-  
-  .artist-thumbnail img {
-    width: 100%; /* set the width of the thumbnail image to 100% of its container */
-    height: auto; /* preserve the aspect ratio of the image */
-    border-radius: 5px; /* round the corners of the image */
-  }
-  
-  .artist-name {
-    font-size: 16px; /* set the font size of the artist name */
-    font-weight: bold; /* make the artist name bold */
-    text-align: center; /* center the artist name */
-    padding: 10px; /* add some padding to the artist name */
-    color: #006699; /* set the color of the artist name to a dark blue */
-  }
-  
-  .artist-name:hover {
-    color: #fff; /* change the color of the artist name to white on hover */
-    background-color: #006699; /* change the background color to a dark blue on hover */
-  }
-  
+  background-color: #121212;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.last-viewed-artists {
+  margin-top: 50px;
+}
+
+.last-viewed-artists h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.last-viewed-artists .artist-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link {
+  display: inline-block;
+  background-color: #1db954;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  transition: background-color 0.2s ease;
+}
+
+.link:hover {
+  background-color: #0f9d58;
+}

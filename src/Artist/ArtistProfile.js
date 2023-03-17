@@ -1,37 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./ArtistProfile.css"
 import albumArt from "../Assets/album_art.jpg";
-
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+// add artist variable to the props
 const ArtistProfile = () => {
+  const { id } = useParams();
+  // create a state variable for the artist
+  const [artist, setArtist] = React.useState({
+    name: '',
+    genres: [],
+    popularity: 0,
+    mbid: ''
+  });
+
+  // get artist name from url params
+  useEffect(() => {
+    // get the artist name from the url
+    const artistName = id;
+    // fetch the artist info
+    fetch(`http://localhost:3001/artists/${artistName}`)
+      .then(data => {
+        // read the response
+        data.json().then(response => {
+          // set the artist state variable
+          setArtist(response);
+        });
+      });
+  }, []);
+
   return (
+    // get musician name from artist variable
     <div className="artist-profile">
-      <div className="artist-name">
-        <h1>John Doe</h1>
-      </div>
-      <div className="artist-bio">
-        <p>John Doe is a talented artist based in New York City. She has been creating great music for the past 10 years. John's work is inspired by nature and her surroundings</p>
-      </div>
-      <div className="artist-works">
-        <h2>Albums</h2>
-        <div className="artwork-preview">
-          <img src={albumArt} alt="Artwork 1" />
-          <h3>Album 1</h3>
+      <h1>{artist.name}</h1>
+      <div className="artist-info">
+        {/* list the genres */}
+        <div className="genres">
+          Genres: {artist.genres.map((genre, index) => <span key={index}>{genre}</span>)}
         </div>
-        <div className="artwork-preview">
-          <img src={albumArt} alt="Artwork 2" />
-          <h3>Album 2</h3>
-        </div>
-        <div className="artwork-preview">
-          <img src={albumArt} alt="Artwork 3" />
-          <h3>Album 3</h3>
-        </div>
-      </div>
-      <div className="artist-contact">
-        <h2>Contact</h2>
-        <p>Email: john@doe.com</p>
-        <p>Phone: 555-555-1212</p>
+        {/* list the popularity */}
+        <div className="popularity">Popularity: {artist.popularity}</div>
+        {/* list the mbid */}
+        <div className="mbid">MBID: {artist.mbid}</div>
       </div>
     </div>
+
   );
 }
 
