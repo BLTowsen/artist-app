@@ -1,0 +1,73 @@
+.song-list {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .song-list h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .album-info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .artist {
+    font-size: 1.5rem;
+    margin-right: 20px;
+  }
+  
+  .release-date {
+    font-size: 1.5rem;
+  }
+  
+  .cover-art img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .songs {
+    margin-top: 40px;
+  }
+  
+  .song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .song-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .song-title {
+    font-size: 1.5rem;
+    margin-right: 20px;
+  }
+  
+  .song-length {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .song-play {
+    font-size: 1.5rem;
+  }
+  
+  .song-play a {
+    color: #1db954;
+    text-decoration: none;
+  }
+  
+  .song-play a:hover {
+    text-decoration: underline;
+  }
+  

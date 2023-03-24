@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ArtistProfile from './Artist/ArtistProfile';
 import SearchPage from './Search/Search';
 import HomePage from './Home/Home';
+import Album from './Album/Album';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Route exact path="/" component={HomePage} />
     <Route exact path="/search" component={SearchPage} />
     <Route exact path="/artists/:id" component={ArtistProfile} />
+    <Route exact path="/albums/:id" component={Album} />
   </Router>
   );
 }
