@@ -32,6 +32,25 @@ const ArtistProfile = () => {
         </div>
         <div className="popularity">Popularity: {artist.popularity}</div>
         <div className="mbid">MBID: {artist.mbid}</div>
+        {/* section for aliases of artist */}
+        <div className="aliases">
+          Aliases: {artist.aliases.map((alias, index) => <span key={index}>{alias['sort-name']}</span>)}
+        </div>
+      </div>
+      {/* add an albums section */}
+      <div className="albums">
+        <h2>Albums</h2>
+        <div className="album-list">
+          {artist.albums.map((album, index) => (
+            <div className="album" key={index}>
+              <img src={album.coverArt} alt="album art" />
+              <div className="album-info">
+                <div className="album-title">{album.title}</div>
+                <div className="album-release-date">{album['release-date']}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   ) : null;

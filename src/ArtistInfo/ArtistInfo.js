@@ -4,6 +4,11 @@ import './ArtistInfo.css';
 const ArtistInfo = ({ artistInfo}) => {
   const { name, popularity, genres, mbid } = artistInfo;
 
+  if(!name) return null;
+  if(!popularity) return null;
+  if(!genres) return null;
+
+
   return (
     <div className="container">
       <div className="title">{name}</div>
