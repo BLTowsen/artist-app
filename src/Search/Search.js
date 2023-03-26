@@ -12,16 +12,11 @@ const SearchPage = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // search for artist and set selectedArtist
-    // use the input from the form to search for an artist
-    // set the selectedArtist to the first result
-    // history.push(`/artists/${selectedArtist.id}`);
     const urlEncodedSearchQuery = encodeURIComponent(searchQuery);
     fetch('http://localhost:3001/artists/search/' + urlEncodedSearchQuery)
       .then(data => {
         // read the response
         data.json().then(response => {
-          // set the last viewed artists
           // convert response of single object too a map
           const artists = response;
 

@@ -24,7 +24,7 @@ const ArtistProfile = () => {
     });
   }, [id]); // add id as a dependency
 
-  // add a handleSelect that routes to the album page when an album is clicked
+
   const handleSelect = (albumId) => {
     // url encode albumId
     albumId = encodeURIComponent(albumId);
@@ -60,11 +60,9 @@ const ArtistProfile = () => {
         <h2>Albums</h2>
         <div className="album-list">
           {artist.albums.map((album, index) => (
-            // add a click handler to the album div
             <div className="album" key={index} onClick={() => handleSelect(album.mbid)}>
               <div className="album-info">
                 <div className="album-title"><h3>{album.title}</h3></div>
-                {/* put the release date below the title as a subtext */}
                 <div className="album-release-date">Release Date: {album.releaseDate}</div>
               </div>
               <div className="album-art">

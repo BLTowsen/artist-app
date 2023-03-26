@@ -21,7 +21,6 @@ const Album = () => {
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
 
-    // handleSelect function that routes to the song page when a song is clicked
     const handleSelect = (songId) => {
         // url encode songId
         songId = encodeURIComponent(songId);
@@ -50,7 +49,6 @@ const Album = () => {
                 <h2>Songs</h2>
                 <div className="song-list">
                     {album.songs.map((song, index) => (
-                        // display the songs and make them clickable
                         <div className="song" key={index} onClick={() => handleSelect(song.id)}>
                             <div className="song">{song.title}</div>
                             <div className="duration">{formatDuration(song.length)}</div>
