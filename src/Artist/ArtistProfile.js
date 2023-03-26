@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './ArtistProfile.css';
 import albumArt from '../Assets/album_art.jpg';
-import { Link, useParams } from 'react-router-dom';
+import defaultAlbumArt from '../Assets/default-album-art.png';
+import { Link, useParams, useHistory } from 'react-router-dom';
 
 const ArtistProfile = () => {
   const { id } = useParams();
+  const history = useHistory();
   const [artist, setArtist] = useState({
     name: '',
     genres: [],
@@ -27,7 +29,7 @@ const ArtistProfile = () => {
     // url encode albumId
     albumId = encodeURIComponent(albumId);
     // route to the album page
-    window.location.href = `/albums/${albumId}`;
+    history.push(`/albums/${albumId}`);
   };
 
 
@@ -58,15 +60,21 @@ const ArtistProfile = () => {
         <div className="album-list">
           {artist.albums.map((album, index) => (
             // add a click handler to the album div
-            <div className="album" key={index} onClick={() => handleSelect(album.id)}>
+            <div className="album" key={index} onClick={() => handleSelect(album.mbid)}>
               <div className="album-info">
-                <div className="album-title">{album.title}</div>
-                <div className="album-release-date">
-                  Release Date: {album.releaseDate}
-                </div>
+                <div className="album-title"><h3>{album.title}</h3></div>
+                {/* put the release date below the title as a subtext */}
+                <div className="album-release-date">Release Date: {album.releaseDate}</div>
               </div>
               <div className="album-art">
-              <img src={album.coverArt} alt="album art" /><img src={album.coverArt} alt="album art" />
+                  <img
+                    src={album.coverArt}
+                    alt="album art"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = defaultAlbumArt; // set a default image here
+                    }}
+                  />
               </div>
             </div>
           ))}

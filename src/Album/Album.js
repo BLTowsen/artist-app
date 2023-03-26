@@ -1,55 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import './Album.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
+import defaultAlbumArt from '../Assets/default-album-art.png';
 
 const Album = () => {
-  const { albumId } = useParams();
-  const [album, setAlbum] = useState({
-    title: '',
-    artist: '',
-    releaseDate: '',
-    coverArt: '',
-    songs: [],
-  });
+    const { id } = useParams();
+    const [album, setAlbum] = useState(null);
+    const history = useHistory();
 
-  useEffect(() => {
-    fetch(`http://localhost:3001/albums/${albumId}`).then((data) => {
-      data.json().then((response) => {
-        setAlbum(response);
-      });
-    });
-  }, [albumId]); // add albumId as a dependency
+    useEffect(() => {
+        fetch(`http://localhost:3001/albums/${id}`)
+        .then((response) => response.json())
+        .then((data) => setAlbum(data));
+    }, [id]);
 
-  // add a conditional check to only render the component once album state variable has been updated
-  return album.title ? (
-    <div className="song-list">
-      <h1>{album.title}</h1>
-      <div className="album-info">
-        <div className="artist">{album.artist}</div>
-        <div className="release-date">Release Date: {album.releaseDate}</div>
-        <div className="cover-art">
-          <img src={album.coverArt} alt="album art" />
-        </div>
-      </div>
-      {/* add a songs section */}
-      <div className="songs">
-        <h2>Songs</h2>
+    // handleSelect function that routes to the song page when a song is clicked
+    const handleSelect = (songId) => {
+        // url encode songId
+        songId = encodeURIComponent(songId);
+        // route to the song page
+        history.push(`/songs/${songId}`);
+    };
+
+
+    return album ? (
         <div className="song-list">
-          {album.songs.map((song, index) => (
-            <div className="song" key={index}>
-              <div className="song-info">
-                <div className="song-title">{song.title}</div>
-                <div className="song-length">{song.length}</div>
-              </div>
-              <div className="song-play">
-                <Link to={`/play/${song.id}`}>Play</Link>
-              </div>
+            <h1>{album.name}</h1>
+            <div className="album-info">
+                <div className="release-date">Release Date: {album.releaseDate}</div>
+                <div className="cover-art">
+                    <img
+                        src={album.coverArt}
+                        alt="album art"
+                        onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = defaultAlbumArt; // set a default image here
+                        }}
+                    />
+                </div>
             </div>
-          ))}
+            <div className="songs">
+                <h2>Songs</h2>
+                <div className="song-list">
+                    {album.songs.map((song, index) => (
+                        // display the songs and make them clickable
+                        <div className="song" key={index} onClick={() => handleSelect(song.id)}>
+                            <div className="song">{song.title}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  ) : null;
+    ) : (
+        <div>Loading...</div>
+    );
 };
 
 export default Album;

@@ -22,12 +22,23 @@
   .release-date {
     font-size: 1.5rem;
   }
+
+  /* format album-art similar to spotify */
+  .cover-art {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* center the image vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .cover-art img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    margin-right: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
