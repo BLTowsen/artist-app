@@ -1,8 +1,13 @@
 .home-page {
-  background-color: #121212;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   padding: 50px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -10,6 +15,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 50px;
   text-transform: uppercase;
+  color: var(--primary-color);
 }
 
 .last-viewed-artists {
@@ -31,8 +37,8 @@ h1 {
 
 .link {
   display: inline-block;
-  background-color: #1db954;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
@@ -43,5 +49,5 @@ h1 {
 }
 
 .link:hover {
-  background-color: #0f9d58;
+  background-color: #1d95b9;
 }

@@ -2,11 +2,16 @@
     max-width: 1000px;
     margin: auto;
     padding: 20px;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .song-list h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
   }
   
   .album-info {
@@ -22,7 +27,7 @@
   .release-date {
     font-size: 1.5rem;
   }
-
+  
   /* format album-art similar to spotify */
   .cover-art {
     width: 250px;
@@ -33,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--secondary-color);
   }
   
   .cover-art img {
@@ -44,6 +50,7 @@
   
   .songs {
     margin-top: 40px;
+    width: 100%;
   }
   
   .song {
@@ -52,6 +59,7 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
   }
   
   .song-info {
@@ -62,23 +70,11 @@
   .song-title {
     font-size: 1.5rem;
     margin-right: 20px;
+    color: var(--primary-color);
   }
   
   .song-length {
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .song-play {
-    font-size: 1.5rem;
-  }
-  
-  .song-play a {
-    color: #1db954;
-    text-decoration: none;
-  }
-  
-  .song-play a:hover {
-    text-decoration: underline;
   }
   

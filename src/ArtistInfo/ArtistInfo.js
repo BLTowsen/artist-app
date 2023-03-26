@@ -2,7 +2,7 @@ import React from 'react';
 import './ArtistInfo.css';
 
 const ArtistInfo = ({ artistInfo}) => {
-  const { name, popularity, genres, mbid } = artistInfo;
+  const { name, popularity, genres } = artistInfo;
 
   if(!name) return null;
   if(!popularity) return null;
@@ -13,10 +13,14 @@ const ArtistInfo = ({ artistInfo}) => {
     <div className="container">
       <div className="title">{name}</div>
       <div className="popularity">Popularity: {popularity}</div>
-      <div className="genres">
-        Genres: {genres.map((genre, index) => <span key={index}>{genre}</span>)}
-      </div>
-      <div className="mbid">MBID: {mbid}</div>
+      {/* if genres is empty then dont show */}
+        {genres.length > 0 && (
+            <div className="genres">
+                Genres: {genres.map((genre, index) => (
+                    <span key={index}>{genre}</span>
+                ))}
+            </div>
+        )}
     </div>
   );
 };

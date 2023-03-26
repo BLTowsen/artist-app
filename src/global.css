@@ -18,7 +18,7 @@ body {
   }
   
   :root {
-    --primary-color: #1DB954; /* blue */
+    --primary-color: #1d75b9; /* blue */
     --secondary-color: #191414; /* dark grey */
     --background-color: #FFFFFF; /* white */
   }
@@ -37,7 +37,7 @@ body {
   
   button:hover {
     transform: scale(1.05);
-    background-color: #1AA34A; /* lighter shade of blue */
+    background-color: #1d95b9; /* lighter shade of blue */
   }
   
   a {
@@ -47,7 +47,7 @@ body {
   }
   
   a:hover {
-    color: #1AA34A; /* lighter shade of blue */
+    color: #1d95b9; /* lighter shade of blue */
   }
   
   body {
@@ -63,7 +63,6 @@ body {
     margin-bottom: 0.5rem;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    color: var(--secondary-color);
   }
   
   ul {

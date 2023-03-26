@@ -59,13 +59,13 @@ const Song = () => {
         <div className="song-length">Length: {formatTime(song.length)}</div>
         <div className="release-date">Release Date: {song.releases['first-release-date']}</div>
       </div>
-      <Release
-        key={song.releases.id}
-        releases={song.releases.releases}
-      />
       <Credits
         key={song.credits.id}    
         credits={song.credits['artist-credit']}
+      />
+      <Release
+        key={song.releases.id}
+        releases={song.releases.releases}
       />
     </div>
   ) : (

@@ -45,8 +45,6 @@ const ArtistProfile = () => {
           ))}
         </div>
         <div className="popularity">Popularity: {artist.popularity}</div>
-        <div className="mbid">MBID: {artist.mbid}</div>
-        {/* section for aliases of artist */}
         <div className="aliases">
           Aliases:{' '}
           {artist.aliases.map((alias, index) => (
