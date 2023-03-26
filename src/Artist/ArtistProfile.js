@@ -44,13 +44,16 @@ const ArtistProfile = () => {
             <span key={index}>{genre}</span>
           ))}
         </div>
-        <div className="popularity">Popularity: {artist.popularity}</div>
+        <div className="popularity">Popularity: {artist.popularity}/100</div>
+        {/* only show aliases if not undefinded */}
+        {artist.aliases && artist.aliases.length > 0 && (
         <div className="aliases">
           Aliases:{' '}
           {artist.aliases.map((alias, index) => (
             <span key={index}>{alias['sort-name']}</span>
           ))}
         </div>
+        )}
       </div>
       {/* add an albums section */}
       <div className="albums">

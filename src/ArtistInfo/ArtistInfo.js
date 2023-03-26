@@ -12,7 +12,7 @@ const ArtistInfo = ({ artistInfo}) => {
   return (
     <div className="container">
       <div className="title">{name}</div>
-      <div className="popularity">Popularity: {popularity}</div>
+      <div className="popularity">Popularity: {popularity}/100</div>
       {/* if genres is empty then dont show */}
         {genres.length > 0 && (
             <div className="genres">

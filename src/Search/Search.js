@@ -49,7 +49,7 @@ const SearchPage = () => {
       <form onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Search for an artist, album or song"
+          placeholder="Search for an artist"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />

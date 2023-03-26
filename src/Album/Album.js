@@ -14,6 +14,13 @@ const Album = () => {
         .then((data) => setAlbum(data));
     }, [id]);
 
+    // function to format the song duration
+    const formatDuration = (duration) => {
+        const minutes = Math.floor(duration / 60000);
+        const seconds = ((duration % 60000) / 1000).toFixed(0);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
+
     // handleSelect function that routes to the song page when a song is clicked
     const handleSelect = (songId) => {
         // url encode songId
@@ -46,6 +53,7 @@ const Album = () => {
                         // display the songs and make them clickable
                         <div className="song" key={index} onClick={() => handleSelect(song.id)}>
                             <div className="song">{song.title}</div>
+                            <div className="duration">{formatDuration(song.length)}</div>
                         </div>
                     ))}
                 </div>
